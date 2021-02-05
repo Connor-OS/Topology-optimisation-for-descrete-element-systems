@@ -2,7 +2,7 @@
 
 This is a simple code for topology optimization of systems of discrete elements written in MATLAB.
 
-##Download
+## Download
 To download use:
 ```
 $ cd <path> 
@@ -11,7 +11,7 @@ $ cd DETO
 ```
 <path> should be the location you wish to store DETO 
 
-##Folder Layout
+## Folder Layout
 After downloading the DETO folder will contain the following folders:
 
 | Folder | Description                        |
@@ -21,8 +21,8 @@ After downloading the DETO folder will contain the following folders:
 | dump   | repository for dump files          |
 | rocket | files for running on rocket HPC    |
 
-##Running
-###Local machine 
+## Running
+### Local machine 
 To run the code on your own machine it can be called from the src folder with the function:
 
 $ top(nelx,nely,mass,Diam,rmin,kspr)
@@ -43,7 +43,7 @@ a simple benchmark simulation to run could be:
 $ top(45,15,0.6,1,1.2,100)
 
 respectively
-###Tests
+### Tests
 A number of example simulations are included in the tests folder to showcase the capabilities of the code and some adapted boundry conditions without the user having to input material parameters. These can be run from the tests folder with the matlab commands:
 
 $ top
@@ -67,13 +67,13 @@ $ sbatch topR.sh
 ```
 To alter the dimensions and and properties of this simulation you will need to eddit the values defiened at the top of the script topR.m
 
-##Output files
+## Output files
 
 The code will produce a matlab figure displaying the position and relative mass of all particles at each step of the optimisation. It will also produce two dump files deposited in the dump folder labeled XY and Itt followed by the input parameters of that simulation. These files contain usefull information on the simulation.
 
 XY: containes x,y coordinate and relative mass data on the system that can be opened in Ovito for analysis.
 Itt: Contains information on the simulation time an performance indicators at each iteration.
 
-##Alternate energy minimization
+## Alternate energy minimization
 A second energy minimsation algorithm by stepest descent has been included in the src folder labeled SDmin.m it is possible to swap out the conventional quick min algorithm by making changes to the top.m file to call this instead. In almost all cases this will slow down the simulation but has been included here so the interested user may compare the results of different optimisation techniques.
 
